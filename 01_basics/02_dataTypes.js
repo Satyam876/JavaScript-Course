@@ -14,3 +14,25 @@ console.log(typeof(undefined))    // type -> undefined
 
 
 // In the early implementation of JavaScript, values were represented as a type tag followed by the actual value. The type tag for objects was 0. Since null was represented as the null pointer (0x00 in most platforms), it ended up having the same type tag (0) as objects, resulting in typeof null being "object".
+
+
+/*         FEW MORE DATATYPES */
+
+// Array, Objects and Functions
+
+const myArray = ["apple", "mango", "strawberry"]
+console.log(myArray) 
+
+let myObj = {
+    studentId : 123,
+    studentName : "satyam",
+    studentMarks : 98
+}
+
+console.log(myObj)
+
+const myFunction = function(){
+    console.log("This is an impelmentation of a function")
+}
+
+myFunction.apply()

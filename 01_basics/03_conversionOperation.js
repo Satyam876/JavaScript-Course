@@ -21,8 +21,8 @@ let value2InNumber = Number(value2)
 let isLoggedIn = ""
 let booleanIsLoggedIn = Boolean(isLoggedIn)
 
-console.log(typeof booleanIsLoggedIn)
-console.log(booleanIsLoggedIn)
+// console.log(typeof booleanIsLoggedIn)
+// console.log(booleanIsLoggedIn)
 
 
 
@@ -38,3 +38,27 @@ console.log(booleanIsLoggedIn)
     "satyam"   -> true
     ""         -> false
 */
+
+
+
+/*                    OPERATIONS                     */
+
+// console.log(2+2)
+// console.log(2*2)
+// console.log(2/2)
+// console.log(2**3)
+
+let str1 = "hello"
+let str2 = " satyam"
+
+// console.log(str1 + str2)
+
+
+console.log(1 + 2)
+console.log("1" + 2)
+console.log(1 + "2")
+console.log("1" + "2")
+
+
+console.log("1" + 2 + 2)
+console.log(1 + 2 + "2")
