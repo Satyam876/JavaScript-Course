@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Part-4</title>
+</head>
+<body style="background-color: black; color:white">
+    <h1>EDIT & REMOVE ELEMENT IN DOM</h1>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+
+
+<script>
+        // ADD ELEMENT
+
+        function addLanguage(lang){
+            const list = document.createElement('li')
+            list.innerHTML = `${lang}`;
+            document.querySelector(".language").appendChild(list)
+        }
+
+        addLanguage("python")
+        addLanguage("golang")
+
+        // OPTIMIZED FUNCTION
+
+        function addLanguageOptimized(lang){
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(`${lang}`))
+            document.querySelector(".language").appendChild(li);
+        }
+
+        addLanguageOptimized("typeScript")
+
+        // EDIT ELEMENTS
+
+        const thirdLanguage = document.querySelector("li:nth-child(3)")
+        const newLi = document.createElement('li')
+
+        newLi.textContent = "Kotlin"      // We can also use either createTextNode method or innerHTML method
+        thirdLanguage.replaceWith(newLi)
+
+
+        // REMOVE ELEMENT
+
+        const lastLang = document.querySelector("li:last-child")
+        lastLang.remove()
+
+</script>
+
+
+
+</html>
