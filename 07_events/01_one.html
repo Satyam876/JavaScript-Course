@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JavaScript : Part-1</title>
+</head>
+<body>
+    <ul id="images">
+        <li><img src="./pexels-eugenia-remark-5767088-15283255.jpg" id="bridge" width="200px" alt="bridge"></li>
+        <li><img src="./pexels-vasilis-karkalas-155349971-27060350.jpg" id="insect" width="200px" alt=""></li>
+        <li><img src="./pexels-sergey-kosach-1449427769-27088432.jpg" id="girl" width="200px" alt=""></li>
+        <li><img src="./pexels-hellojoshwithers-26976251.jpg" id="house" width="200px" alt=""></li>
+        <li><a href="https://www.google.co.in/" target="_blank" id="google">GOOGLE</a></li>
+
+    </ul>
+</body>
+
+
+
+<script>
+        /*  document.getElementById('insect').onclick = function(){
+                alert('Insect Image Clicked !')
+            }  */                                                                  // Not a good approach for scaling projects
+
+        /*  document.getElementById('insect').addEventListener('click', ()=>{
+                alert('Insect Image Clicked !')
+            }, false)  */
+
+
+            // ⁡⁢⁣⁣Important Attributes of addEventListener :-⁡
+            // type, timestamp, defaultPrevented, 
+            // target, toElement, srcElement, currentTarget
+            // clientX, clientY, screenX, screenY
+            // altKey, ctrlKey, shiftKey, keyCode
+
+
+        // ⁡⁢⁣⁣Event Propagation -> Bubbling  and  Capturing⁡
+        
+        //  ‍‍‍Bubbling -> When dfault value in addEventListener is false.
+        //  Capturing -> When deafult value in addEventListener is true.
+
+
+    /*   document.getElementById('images').addEventListener('click', ()=>{            // By default it is false -> Bubbling
+            console.log('Ul Tag Clicked !')
+        }, false)                                                                    // 𝗢𝗨𝗧𝗣𝗨𝗧 -> 𝟭. 𝗚𝗶𝗿𝗹 𝗜𝗺𝗮𝗴𝗲 𝗖𝗹𝗶𝗰𝗸𝗲𝗱
+                                                                                              //  𝟮. 𝗨𝗹 𝗧𝗮𝗴 𝗖𝗹𝗶𝗰𝗸𝗲𝗱
+        document.getElementById("girl").addEventListener('click', ()=>{
+            console.log('Girl Image Clicked')
+        }, false)  */
+
+
+    /*  document.getElementById('images').addEventListener('click', ()=>{              // TRUE -> CAPTURING
+            console.log('Ul tag Clicked -> Capturing Example')
+        }, true)
+
+        document.getElementById('girl').addEventListener('click', (e)=>{               // 𝗢𝗨𝗧𝗣𝗨𝗧 -> 𝟭. 𝗚𝗶𝗿𝗹 𝗜𝗺𝗮𝗴𝗲 𝗖𝗹𝗶𝗰𝗸𝗲𝗱 -> 𝗖𝗮𝗽𝘁𝘂𝗿𝗶𝗻𝗴 𝗘𝘅𝗮𝗺𝗽𝗹𝗲
+            console.log('Girl Image Clicked -> Capturing Example')                            //   𝟮. 𝗨𝗹 𝘁𝗮𝗴 𝗖𝗹𝗶𝗰𝗸𝗲𝗱 -> 𝗖𝗮𝗽𝘁𝘂𝗿𝗶𝗻𝗴 𝗘𝘅𝗮𝗺𝗽𝗹𝗲
+            e.stopPropagation();
+            }, true)   */
+
+
+
+        document.getElementById('google').addEventListener('click', (e)=>{
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("Google link Clicked")
+        })
+
+
+        // REMOVE METHOD
+
+        document.querySelector('#images').addEventListener('click', (e)=>{
+           // console.log(e)
+           // console.log(e.target)
+           // console.log(e.target.parentNode)
+
+           if(e.target.tagName === 'IMG')
+           {
+               const removeElement = e.target.parentNode
+    
+               removeElement.remove();      
+    
+               // removeElement.parentNode.removeChild(removeElement)
+           }
+
+        })
+
+
+</script>
+
+
+
+</html>
