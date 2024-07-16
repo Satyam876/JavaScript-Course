@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Events | Part-2</title>
+</head>
+<body style="background-color: rgb(52, 52, 52); color:white">
+    <h1>Async Events : setInterval & clearInterval</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+
+<script>
+
+        // SETINTERVAL FUNCTION
+
+        const sayDate = function(str){
+            console.log(str, Date.now())
+        }
+        
+        // setInterval(sayDate, 1000, "satyam")
+
+        let startPrint;
+
+        document.querySelector('#start').addEventListener('click', ()=>{
+            startPrint = setInterval(sayDate, 1000, "satyam")
+        })
+
+        
+        document.querySelector('#stop').addEventListener('click', ()=>{
+            clearInterval(startPrint)
+            console.log("Printing Stopped !")
+        })
+
+
+
+
+</script>
+</html>
