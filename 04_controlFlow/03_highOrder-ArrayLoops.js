@@ -46,7 +46,7 @@ const myObj = {
 
 // for(const [key, value] of myObj)                 // ** This FOR-OF Loop doesn't work on OBJECTS
 //     {
-//         // console.log(`${key} :- ${value}`)
+        // console.log(`${key} :- ${value}`)
 //     }
 
 
